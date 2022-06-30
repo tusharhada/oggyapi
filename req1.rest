@@ -1,0 +1,59 @@
+PATCH http://localhost:8081/mapi/jaipur/restaurants/62bd2c8899ede46d7528ba26 HTTP/1.1
+content-type: application/json
+
+{
+    "zomato_offer": [
+    {
+        "code": "ZOMPAYTM",
+        "title": "₹30 Paytm cashback using Paytm",
+        "subtitle": "Valid on total value of items worth ₹159 or more."
+    },
+    {
+        "code": "SIMPLNEW",
+        "title": "Get Flat ₹40 OFF",
+        "subtitle": "Valid on orders with items worth ₹159 or more"
+    },
+    {
+        "code": "",
+        "title": "Flat 50% OFF",
+        "subtitle": "Get flat 50% OFF on all orders."
+    },
+    {
+        "code": "LAZYPAY75",
+        "title": "Get ₹75 LazyPay cashback on your first LazyPay transaction",
+        "subtitle": "Valid on total value of items worth ₹159 or more"
+    }],
+    "swiggy_offer": [
+    {
+        "code": "USE TRYNEW", 
+        "title": "0% OFF UPTO ₹120", 
+        "subtitle": "ABOVE ₹129"    
+    },
+    {
+        "code": "USE WELCOME50", 
+        "title": "50% OFF + ₹30 CASHBACK", 
+        "subtitle": "PAYTM CASHBACK" 
+    },
+    {
+        "code": "USE JUMBO", 
+        "title": "30% OFF UPTO ₹150", 
+        "subtitle": "ABOVE ₹400"
+    }],
+    "dineout_offer": [
+    {
+        "code": "", 
+        "title": "Flat 10% Off the Total Bill", 
+        "subtitle": "Additional 10% Off when paid with PromoCash"    
+    },
+    {
+        "code": "", 
+        "title": "Get Extra Upto 15% Off", 
+        "subtitle": "with HDFC Bank Credit card"    
+    }],
+    "eazydiner_offer": [{
+        "code": "", 
+        "title": "10% off on food & soft bev.", 
+        "subtitle": " Enjoy an Extra 40% off upto Rs. 1000 when you pay via the EazyDiner App"
+    }]
+
+}
