@@ -1,0 +1,381 @@
+[
+  {
+    "locality_code": "amer-road",
+    "locality_name": "Amer Road",
+    "z_locality_name": [
+      "amer-restaurants",
+      "amer-road-restaurants",
+      "transport-nagar-restaurants",
+      "agra-road-restaurants"
+    ],
+    "s_locality_name": [],
+    "d_locality_name": ["Amer", "Amer Road", "Agra Road"],
+    "e_locality_name": [
+      "amer-road",
+      "amer",
+      "trident-jaipur-amer-road",
+      "doubletree-by-hilton-jaipur-amer",
+      "transport-nagar",
+      "agra-road"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "bani-park",
+    "locality_name": "Bani Park",
+    "z_locality_name": [
+      "gopalbari-restaurants",
+      "bani-park-restaurants",
+      "hasanpura-restaurants"
+    ],
+    "s_locality_name": [],
+    "d_locality_name": ["Gopalbari", "Bani Park"],
+    "e_locality_name": [
+      "gopalbari",
+      "itc-rajputana-hotel-gopalbari",
+      "bani-park",
+      "nirwana-hometel-bani-park",
+      "lemon-tree-premier-bani-park",
+      "hotel-park-inn-bani-park",
+      "zone-by-the-park-bani-park",
+      "hotel-clarks-inn-bani-park",
+      "hasanpura"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "tonk-road",
+    "locality_name": "Tonk Road",
+    "z_locality_name": [
+      "durgapura-restaurants",
+      "sanganer-restaurants",
+      "sitapur-restaurants",
+      "tonk-road-restaurants"
+    ],
+    "s_locality_name": ["mansarovar-extension"],
+    "d_locality_name": [
+      "Vishwakarma Industrial Area",
+      "Tonk Road",
+      "Sitapura",
+      "Sanganer",
+      "Durgapura"
+    ],
+    "e_locality_name": [
+      "tonk-road",
+      "the-theme-tonk-road",
+      "the-fern-residency-jaipur",
+      "crowne-plaza-jaipur-tonk-road",
+      "jaipur-marriott-hotel-tonk-road",
+      "four-points-by-sheraton-tonk-road",
+      "sitapura",
+      "radisson-blu-tonk-road",
+      "hotel-royal-orchid-tonk-road",
+      "the-fern-an-ecotel-hotel-jaipur",
+      "the-theme-hotel-jaipur",
+      "durgapura",
+      "vishwakarma-industrial-area"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "raja-park",
+    "locality_name": "Raja Park",
+    "z_locality_name": [
+      "raja-park-restaurants",
+      "adarsh-nagar-restaurants",
+      "narayan-singh-circle-restaurants",
+      "jawahar-nagar-restaurants",
+      "shastri-nagar-restaurants"
+    ],
+    "s_locality_name": ["Raja-Park"],
+    "d_locality_name": [
+      "Narayan Singh Circle",
+      "Raja Park",
+      "Adarsh Nagar",
+      "Jawahar Nagar",
+      "Shastri Nagar"
+    ],
+    "e_locality_name": [
+      "raja-park",
+      "shastri-nagar",
+      "narayan-singh-circle",
+      "adarsh-nagar",
+      "jawahar-nagar",
+      "ramada-hotel-raja-park",
+      "grand-uniara-narayan-singh-circle"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "mi-road",
+    "locality_name": "MI Road",
+    "z_locality_name": ["mi-road-restaurants"],
+    "s_locality_name": [],
+    "d_locality_name": ["Mirza Ismail Road", "Johari Bazaar", "Nehru Bazar"],
+    "e_locality_name": [
+      "mi-road",
+      "radisson-jaipur-city-center-mi-road",
+      "golden-tulip-mi-road",
+      "hotel-om-tower-mi-road",
+      "hotel-golden-tulip-jaipur",
+      "hotel-golden-tulip-essential-jaipur",
+      "leisure-inn-grand-chanakya-mi-road"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "vaishali-nagar",
+    "locality_name": "Vaishali Nagar",
+    "z_locality_name": [
+      "vaishali-nagar-restaurants",
+      "chitrakoot-restaurants",
+      "khatipura-road-restaurants"
+    ],
+    "s_locality_name": ["vaishali-nagar"],
+    "d_locality_name": ["Vaishali Nagar", "Chitrakoot", "Khatipura"],
+    "e_locality_name": [
+      "vaishali-nagar",
+      "chitrakoot",
+      "sarovar-portico-vaishali-nagar",
+      "elements-mall-chitrakoot",
+      "sarovar-portico-vaishali-nagar",
+      "sarovar-premiere-jaipur",
+      "khatipura-road"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "c-scheme",
+    "locality_name": "C-Scheme",
+    "z_locality_name": [
+      "bais-godam-restaurants",
+      "c-scheme-restaurants",
+      "civil-lines-restaurants",
+      "lal-kothi-restaurants",
+      "bapu-nagar-restaurants"
+    ],
+    "s_locality_name": ["c-scheme", "lal-kothi"],
+    "d_locality_name": [
+      "C Scheme",
+      "Bapu Nagar",
+      "Civil Lines",
+      "Lal Kothi",
+      "Bais Godam",
+      "Bhawani Singh Road"
+    ],
+    "e_locality_name": [
+      "c-scheme",
+      "bais-godam",
+      "lal-kothi",
+      "jai-mahal-palace-civil-lines",
+      "holiday-inn-jaipur-city-centre-bais-godam",
+      "civil-lines",
+      "hotel-park-prime-c-scheme",
+      "taj-rambagh-palace-c-scheme",
+      "hilton-jaipur-bais-godam",
+      "hotel-las-vegas-bais-godam",
+      "fortune-select-metropolitan-bais-godam",
+      "sujan-rajmahal-palace-jaipur",
+      "rajmahal-palace-jaipur",
+      "crystal-palm-mall-bais-godam",
+      "mgf-metropolitan-mall-bais-godam",
+      "sujan-rajmahal-palace-jaipur",
+      "rajmahal-palace-jaipur",
+      "bapu-nagar",
+      "ashok-nagar"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "sindhi-camp",
+    "locality_name": "Sindhi Camp",
+    "z_locality_name": [
+      "sindhi-camp-restaurants",
+      "sansar-chandra-road-restaurants"
+    ],
+    "s_locality_name": ["sindhi-camp"],
+    "d_locality_name": ["Sindhi Camp"],
+    "e_locality_name": ["sansar-chandra-road", "sindhi-camp"],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "malviya-nagar",
+    "locality_name": "Malviya Nagar",
+    "z_locality_name": ["malviya-nagar-restaurants"],
+    "s_locality_name": ["Malviya Nagar", "malviya-nagar-2"],
+    "d_locality_name": ["Malviya Nagar", "Lal Bahadur Nagar"],
+    "e_locality_name": [
+      "malviya-nagar",
+      "the-lalit-jaipur-malviya-nagar",
+      "hotel-clarks-amer-malviya-nagar",
+      "world-trade-park-malviya-nagar",
+      "gaurav-towers-malviya-nagar",
+      "gold-souk-building-malviya-nagar",
+      "gt-central-malviya-nagar",
+      "jawahar-lal-nehru-marg",
+      "hotel-de-nada-jaipur"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "vidhyadhar-nagar",
+    "locality_name": "Vidhyadhar Nagar",
+    "z_locality_name": ["vidhyadhar-nagar-restaurants", "jhotwara-restaurants"],
+    "s_locality_name": ["vidhyadharnagar", "jhotwara"],
+    "d_locality_name": ["Vidhyadhar Nagar", "Jhotwara", "Murlipura"],
+    "e_locality_name": ["vidhyadhar-nagar"],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "sikar-road",
+    "locality_name": "Sikar Road",
+    "z_locality_name": ["sikar-road-restaurants"],
+    "s_locality_name": [],
+    "d_locality_name": [],
+    "e_locality_name": ["sikar-road"],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "gopalpura",
+    "locality_name": "Gopalpura",
+    "z_locality_name": ["gopalpura-restaurants", "tonk-phatak-restaurants"],
+    "s_locality_name": [],
+    "d_locality_name": ["Gopalpura", "Tonk Phatak"],
+    "e_locality_name": ["gopalpura"],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "pratap-nagar",
+    "locality_name": "Pratap Nagar",
+    "z_locality_name": ["pratap-nagar-restaurants", "jagatpura-restaurants"],
+    "s_locality_name": ["pratap-nagar", "jagatpura"],
+    "d_locality_name": ["Jagatpura", "Pratap Nagar"],
+    "e_locality_name": ["jagatpura", "pratap-nagar", "hotel-urban-ville"],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "pink-city",
+    "locality_name": "Pink City",
+    "z_locality_name": ["pink-city-restaurants", "brahmpuri-restaurants", ""],
+    "s_locality_name": [""],
+    "d_locality_name": [
+      "Subhash Nagar",
+      "",
+      "Brahmpuri",
+      "Pink CIty",
+      "Pink City",
+      "Chandpole"
+    ],
+    "e_locality_name": [
+      "pink-city",
+      "brahmpuri",
+      "jaipur",
+      "",
+      "kanwar-nagar-jaipur"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "mansarovar",
+    "locality_name": "Mansarovar",
+    "z_locality_name": ["mansarovar-restaurants", "ajmer-highway-restaurants"],
+    "s_locality_name": ["manasarovar"],
+    "d_locality_name": ["Mansarovar", "Ajmer Road", "Dahmi Kalan"],
+    "e_locality_name": [
+      "mansarovar",
+      "ajmer-highway",
+      "hotel-souvenir-premier-mansarovar",
+      "renest-jaipur",
+      "bhakrota"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "kukas",
+    "locality_name": "Kukas",
+    "z_locality_name": ["kukas-restaurants"],
+    "s_locality_name": [],
+    "d_locality_name": ["Kukas", "Kalakho"],
+    "e_locality_name": [
+      "kukas",
+      "le-meridien-jaipur-kukas",
+      "fairmont-jaipur-kukas",
+      "shiv-vilas-resort-kukas",
+      "clarion-inn-jaipur",
+      "the-leela-palace-jaipur"
+    ],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "achrol",
+    "locality_name": "Achrol",
+    "z_locality_name": ["achrol-restaurants"],
+    "s_locality_name": [],
+    "d_locality_name": ["Achrol", "Chitanukalan"],
+    "e_locality_name": [],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  },
+  {
+    "locality_code": "sodala",
+    "locality_name": "Sodala",
+    "z_locality_name": ["sodala-restaurants", "shyam-nagar-restaurants"],
+    "s_locality_name": [],
+    "d_locality_name": ["Sodala", "Nirman Nagar", "Shyam Nagar"],
+    "e_locality_name": ["sodala", "shyam-nagar"],
+    "city_id": 1,
+    "city_name": "Jaipur",
+    "country_id": 1,
+    "country_name": "India"
+  }
+]

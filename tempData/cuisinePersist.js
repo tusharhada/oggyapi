@@ -1,0 +1,390 @@
+import mongoose from 'mongoose'
+import cuisineModel from '../models/cuisineModel.js'
+
+const CONNECTION_URL = "mongodb+srv://oggy:oggy123@cluster0.w7mvm.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(CONNECTION_URL, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
+
+const db = mongoose.connection;
+db.on("error", (error) => console.error(error));
+db.once("open", () => console.log("Connected to Database"));
+
+cuisineModel.deleteMany({}).then( function() {
+    console.log("Data Deleted")
+  }).catch(function(error){
+    console.log(error)      // Failure
+});
+
+cuisineModel.insertMany([
+    {
+      "cuisine_id": 1,
+      "cuisine_name": "North Indian",
+      "mapped_cuisines": ["North Indian", "North West Frontier"]
+    },
+    {
+      "cuisine_id": 2,
+      "cuisine_name": "Mughlai",
+      "mapped_cuisines": ["Mughlai"]
+    },
+    {
+      "cuisine_id": 3,
+      "cuisine_name": "Rajasthani",
+      "mapped_cuisines": ["Rajasthani"]
+    },
+    {
+      "cuisine_id": 4,
+      "cuisine_name": "Desserts",
+      "mapped_cuisines": ["Desserts"]
+    },
+    {
+      "cuisine_id": 5,
+      "cuisine_name": "South Indian",
+      "mapped_cuisines": ["South Indian"]
+    },
+    {
+      "cuisine_id": 6,
+      "cuisine_name": "Chinese",
+      "mapped_cuisines": ["Chinese"]
+    },
+    {
+      "cuisine_id": 7,
+      "cuisine_name": "Continental",
+      "mapped_cuisines": ["Continental"]
+    },
+    {
+      "cuisine_id": 8,
+      "cuisine_name": "Italian",
+      "mapped_cuisines": ["Italian", "Italian-American"]
+    },
+    { "cuisine_id": 9, "cuisine_name": "Asian", "mapped_cuisines": ["Asian"] },
+    { "cuisine_id": 10, "cuisine_name": "Bakery", "mapped_cuisines": ["Bakery"] },
+    {
+      "cuisine_id": 11,
+      "cuisine_name": "Street Food",
+      "mapped_cuisines": ["Street Food"]
+    },
+    {
+      "cuisine_id": 14,
+      "cuisine_name": "Beverages",
+      "mapped_cuisines": ["Beverages"]
+    },
+    {
+      "cuisine_id": 15,
+      "cuisine_name": "Ice Cream",
+      "mapped_cuisines": ["Ice Cream", "Ice Cream Cakes"]
+    },
+    { "cuisine_id": 16, "cuisine_name": "Waffle", "mapped_cuisines": ["Waffle"] },
+    {
+      "cuisine_id": 19,
+      "cuisine_name": "Pasta",
+      "mapped_cuisines": ["Pasta", "Pastas"]
+    },
+    {
+      "cuisine_id": 20,
+      "cuisine_name": "Pizza",
+      "mapped_cuisines": ["Pizza", "Pizzas"]
+    },
+    {
+      "cuisine_id": 21,
+      "cuisine_name": "Fast Food",
+      "mapped_cuisines": ["Fast Food"]
+    },
+    {
+      "cuisine_id": 22,
+      "cuisine_name": "Burger",
+      "mapped_cuisines": ["Burger", "Burgers"]
+    },
+    {
+      "cuisine_id": 23,
+      "cuisine_name": "Sandwich",
+      "mapped_cuisines": ["Sandwich"]
+    },
+    {
+      "cuisine_id": 24,
+      "cuisine_name": "Hot dogs",
+      "mapped_cuisines": ["Hot dogs"]
+    },
+    { "cuisine_id": 25, "cuisine_name": "Wraps", "mapped_cuisines": ["Wraps"] },
+    { "cuisine_id": 26, "cuisine_name": "Juices", "mapped_cuisines": ["Juices"] },
+    {
+      "cuisine_id": 27,
+      "cuisine_name": "Mexican",
+      "mapped_cuisines": ["Mexican"]
+    },
+    {
+      "cuisine_id": 28,
+      "cuisine_name": "Bar Food",
+      "mapped_cuisines": ["Bar Food", "Finger Food"]
+    },
+    {
+      "cuisine_id": 29,
+      "cuisine_name": "Kebab",
+      "mapped_cuisines": ["Kebab", "Kebabs"]
+    },
+    { "cuisine_id": 30, "cuisine_name": "Coffee", "mapped_cuisines": ["Coffee"] },
+    {
+      "cuisine_id": 31,
+      "cuisine_name": "Sichuan",
+      "mapped_cuisines": ["Sichuan"]
+    },
+    {
+      "cuisine_id": 32,
+      "cuisine_name": "Seafood",
+      "mapped_cuisines": ["Seafood"]
+    },
+    {
+      "cuisine_id": 33,
+      "cuisine_name": "Biryani",
+      "mapped_cuisines": ["Biryani"]
+    },
+    {
+      "cuisine_id": 35,
+      "cuisine_name": "Hyderabadi",
+      "mapped_cuisines": ["Hyderabadi"]
+    },
+    { "cuisine_id": 36, "cuisine_name": "Cafe", "mapped_cuisines": ["Cafe"] },
+    {
+      "cuisine_id": 37,
+      "cuisine_name": "Drinks",
+      "mapped_cuisines": ["Drinks Only", "Cocktail Menu"]
+    },
+    {
+      "cuisine_id": 38,
+      "cuisine_name": "Healthy Food",
+      "mapped_cuisines": ["Healthy Food", "Health Food"]
+    },
+    { "cuisine_id": 39, "cuisine_name": "Awadhi", "mapped_cuisines": ["Awadhi"] },
+    { "cuisine_id": 40, "cuisine_name": "Thai", "mapped_cuisines": ["Thai"] },
+    {
+      "cuisine_id": 41,
+      "cuisine_name": "Roast Chicken",
+      "mapped_cuisines": ["Roast Chicken", "Charcoal Chicken"]
+    },
+    { "cuisine_id": 42, "cuisine_name": "Rolls", "mapped_cuisines": ["Rolls"] },
+    {
+      "cuisine_id": 43,
+      "cuisine_name": "Oriental",
+      "mapped_cuisines": ["Oriental", "oriental"]
+    },
+    { "cuisine_id": 44, "cuisine_name": "Momos", "mapped_cuisines": ["Momos"] },
+    {
+      "cuisine_id": 45,
+      "cuisine_name": "Malwani",
+      "mapped_cuisines": ["Malwani"]
+    },
+    {
+      "cuisine_id": 46,
+      "cuisine_name": "Lebanese",
+      "mapped_cuisines": ["Lebanese"]
+    },
+    { "cuisine_id": 47, "cuisine_name": "Tea", "mapped_cuisines": ["Tea"] },
+    {
+      "cuisine_id": 48,
+      "cuisine_name": "American",
+      "mapped_cuisines": ["American"]
+    },
+    {
+      "cuisine_id": 49,
+      "cuisine_name": "Kashmiri",
+      "mapped_cuisines": ["Kashmiri"]
+    },
+    { "cuisine_id": 50, "cuisine_name": "Sushi", "mapped_cuisines": ["Sushi"] },
+    {
+      "cuisine_id": 51,
+      "cuisine_name": "Mediterranean",
+      "mapped_cuisines": ["Mediterranean"]
+    },
+    {
+      "cuisine_id": 52,
+      "cuisine_name": "Modern Indian",
+      "mapped_cuisines": ["Modern Indian"]
+    },
+    {
+      "cuisine_id": 53,
+      "cuisine_name": "Raw Meats",
+      "mapped_cuisines": ["Raw Meats"]
+    },
+    { "cuisine_id": 54, "cuisine_name": "Andhra", "mapped_cuisines": ["Andhra"] },
+    {
+      "cuisine_id": 55,
+      "cuisine_name": "Japanese",
+      "mapped_cuisines": ["Japanese"]
+    },
+    {
+      "cuisine_id": 56,
+      "cuisine_name": "European",
+      "mapped_cuisines": ["European"]
+    },
+    { "cuisine_id": 57, "cuisine_name": "Kerala", "mapped_cuisines": ["Kerala"] },
+    {
+      "cuisine_id": 58,
+      "cuisine_name": "Afghani",
+      "mapped_cuisines": ["Afghan", "Afghani"]
+    },
+    {
+      "cuisine_id": 60,
+      "cuisine_name": "Pancake",
+      "mapped_cuisines": ["Pancake"]
+    },
+    {
+      "cuisine_id": 61,
+      "cuisine_name": "Gujarati",
+      "mapped_cuisines": ["Gujarati"]
+    },
+    { "cuisine_id": 62, "cuisine_name": "Paan", "mapped_cuisines": ["Paan"] },
+    {
+      "cuisine_id": 63,
+      "cuisine_name": "Lucknowi",
+      "mapped_cuisines": ["Lucknowi"]
+    },
+    { "cuisine_id": 64, "cuisine_name": "French", "mapped_cuisines": ["French"] },
+    { "cuisine_id": 65, "cuisine_name": "Korean", "mapped_cuisines": ["Korean"] },
+    {
+      "cuisine_id": 66,
+      "cuisine_name": "Middle Eastern",
+      "mapped_cuisines": ["Middle Eastern"]
+    },
+    {
+      "cuisine_id": 67,
+      "cuisine_name": "Nepalese",
+      "mapped_cuisines": ["Nepalese"]
+    },
+    { "cuisine_id": 68, "cuisine_name": "Tamil", "mapped_cuisines": ["Tamil"] },
+    {
+      "cuisine_id": 69,
+      "cuisine_name": "Maharashtrian",
+      "mapped_cuisines": ["Maharashtrian"]
+    },
+    { "cuisine_id": 70, "cuisine_name": "Panini", "mapped_cuisines": ["Panini"] },
+    {
+      "cuisine_id": 71,
+      "cuisine_name": "North Eastern",
+      "mapped_cuisines": ["North Eastern"]
+    },
+    {
+      "cuisine_id": 72,
+      "cuisine_name": "Bengali",
+      "mapped_cuisines": ["Bengali"]
+    },
+    { "cuisine_id": 73, "cuisine_name": "Parsi", "mapped_cuisines": ["Parsi"] },
+    { "cuisine_id": 74, "cuisine_name": "Mishti", "mapped_cuisines": ["Mishti"] },
+    {
+      "cuisine_id": 75,
+      "cuisine_name": "Burmese",
+      "mapped_cuisines": ["Burmese"]
+    },
+    {
+      "cuisine_id": 76,
+      "cuisine_name": "Frozen Yogurt",
+      "mapped_cuisines": ["Frozen Yogurt"]
+    },
+    {
+      "cuisine_id": 77,
+      "cuisine_name": "Arabian",
+      "mapped_cuisines": ["Arabian"]
+    },
+    {
+      "cuisine_id": 78,
+      "cuisine_name": "Sweets",
+      "mapped_cuisines": ["Sweets", "Mithai"]
+    },
+    {
+      "cuisine_id": 80,
+      "cuisine_name": "Thalis",
+      "mapped_cuisines": ["Thalis", "Combo"]
+    },
+    { "cuisine_id": 83, "cuisine_name": "Snacks", "mapped_cuisines": ["Snacks"] },
+    { "cuisine_id": 84, "cuisine_name": "Indian", "mapped_cuisines": ["Indian"] },
+    {
+      "cuisine_id": 85,
+      "cuisine_name": "Salads",
+      "mapped_cuisines": ["Salads", "Salad"]
+    },
+    {
+      "cuisine_id": 89,
+      "cuisine_name": "Punjabi",
+      "mapped_cuisines": ["Punjabi"]
+    },
+    { "cuisine_id": 90, "cuisine_name": "Chaat", "mapped_cuisines": ["Chaat"] },
+    { "cuisine_id": 92, "cuisine_name": "Jain", "mapped_cuisines": ["Jain"] },
+    {
+      "cuisine_id": 93,
+      "cuisine_name": "Tandoor",
+      "mapped_cuisines": ["Tandoor"]
+    },
+    {
+      "cuisine_id": 95,
+      "cuisine_name": "Home Food",
+      "mapped_cuisines": ["Home Food"]
+    },
+    {
+      "cuisine_id": 96,
+      "cuisine_name": "Tibetan",
+      "mapped_cuisines": ["Tibetan"]
+    },
+    { "cuisine_id": 98, "cuisine_name": "Grill", "mapped_cuisines": ["Grill"] },
+    {
+      "cuisine_id": 101,
+      "cuisine_name": "Sindhi",
+      "mapped_cuisines": ["Sindhi"]
+    },
+    {
+      "cuisine_id": 103,
+      "cuisine_name": "Tex Mex",
+      "mapped_cuisines": ["Tex Mex"]
+    },
+    {
+      "cuisine_id": 104,
+      "cuisine_name": "Fusion",
+      "mapped_cuisines": ["Fusion"]
+    },
+    {
+      "cuisine_id": 105,
+      "cuisine_name": "Iranian",
+      "mapped_cuisines": ["Iranian"]
+    },
+    {
+      "cuisine_id": 106,
+      "cuisine_name": "Chettinad",
+      "mapped_cuisines": ["Chettinad"]
+    },
+    {
+      "cuisine_id": 107,
+      "cuisine_name": "Multicuisine",
+      "mapped_cuisines": ["Multicuisine", "", "All Day Dining"]
+    },
+    {
+      "cuisine_id": 108,
+      "cuisine_name": "Barbeque",
+      "mapped_cuisines": ["Barbeque", "Barbecue", "BBQ"]
+    },
+    {
+      "cuisine_id": 110,
+      "cuisine_name": "Pan Asian",
+      "mapped_cuisines": ["Pan Asian", "Pan-Asian"]
+    },
+    {
+      "cuisine_id": 111,
+      "cuisine_name": "Delicatessen",
+      "mapped_cuisines": ["Delicatessen"]
+    },
+    {
+      "cuisine_id": 113,
+      "cuisine_name": "Shakes",
+      "mapped_cuisines": ["Shakes", "Shake", "Milkshakes"]
+    },
+    {
+      "cuisine_id": 114,
+      "cuisine_name": "Nagaland",
+      "mapped_cuisines": ["Nagaland"]
+    }
+  ]
+  ).then( function() {
+    console.log("Data Inserted")
+  }).catch(function(error){
+    console.log(error)      // Failure
+});
+

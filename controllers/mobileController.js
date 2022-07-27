@@ -1,70 +1,70 @@
 import express from "express";
 import mongoose from "mongoose";
 import model from "../models/restaurantModel.js";
-import  menuModel from "../models/menuModel.js";
+import menuModel from "../models/menuModel.js";
 
 const router = express.Router();
 
-export const getRestaurants = async (req, res) => {
-    const { page } = req.query
-    try {
-        const LIMIT = 10;
-        const startIndex = (Number(page) - 1) * LIMIT; // get the starting index of every page
+// export const getRestaurants = async (req, res) => {
+//     const { page } = req.query
+//     try {
+//         const LIMIT = 10;
+//         const startIndex = (Number(page) - 1) * LIMIT; // get the starting index of every page
 
-        const total = await model.countDocuments({})
-        const restaurants = await model.find().sort({_id: -1}).limit(LIMIT).skip(startIndex)
+//         const total = await model.countDocuments({})
+//         const restaurants = await model.find().sort({_id: -1}).limit(LIMIT).skip(startIndex)
             
-        res.status(200).
-        json({
-            data: restaurants,
-            currentPage: Number(page),
-            numberOfPages: Math.ceil(total / LIMIT),
-            total})
-    } catch (err) {
-        res.status(500).json({ message: error.message })
-    }
-}
+//         res.status(200).
+//         json({
+//             data: restaurants,
+//             currentPage: Number(page),
+//             numberOfPages: Math.ceil(total / LIMIT),
+//             total})
+//     } catch (err) {
+//         res.status(500).json({ message: error.message })
+//     }
+// }
 
 
-export const getRestaurantsById = async (req, res) => {
-    const id = req.params.id;
+// export const getRestaurantsById = async (req, res) => {
+//     const id = req.params.id;
   
-    try {
-      const restaurant = await model.findById(id);
-      //console.log(restaurant)
-      res.status(200).json(restaurant);
-    } catch (error) {
-      res.status(404).json({ message: error.message });
-    }
-}
+//     try {
+//       const restaurant = await model.findById(id);
+//       //console.log(restaurant)
+//       res.status(200).json(restaurant);
+//     } catch (error) {
+//       res.status(404).json({ message: error.message });
+//     }
+// }
 
-export const getMenu = async (req, res) => {
-    const id = req.params.id;
+// export const getMenu = async (req, res) => {
+//     const id = req.params.id;
   
-    try {
-      const menuRestaurant = await menuModel.findById(id);
-      //console.log(restaurant)
-      res.status(200).json(menuRestaurant);
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-}
+//     try {
+//       const menuRestaurant = await menuModel.findById(id);
+//       //console.log(restaurant)
+//       res.status(200).json(menuRestaurant);
+//     } catch (error) {
+//       res.status(500).json({ message: error.message });
+//     }
+// }
 
-export const getOffers = async (req, res) => {
-    const id = req.params.id
+// export const getOffers = async (req, res) => {
+//     const id = req.params.id
 
-    try{
-        const restaurant = await model.findById(id);
-        var offers = {"zomato_offers": [], "swiggy_offers": [], "dineout_offers": [], "eazydiner_offers": []};
-        offers.zomato_offers.push(restaurant.zomato_offer);
-        offers.swiggy_offers.push(restaurant.swiggy_offer);
-        offers.dineout_offers.push(restaurant.dineout_offer);
-        offers.eazydiner_offers.push(restaurant.swiggy_offer);
-        res.status(200).json(offers);
-    } catch (error) {
-        res.status(404).json({message: error.message});
-    }
-}
+//     try{
+//         const restaurant = await model.findById(id);
+//         var offers = {"zomato_offers": [], "swiggy_offers": [], "dineout_offers": [], "eazydiner_offers": []};
+//         offers.zomato_offers.push(restaurant.zomato_offer);
+//         offers.swiggy_offers.push(restaurant.swiggy_offer);
+//         offers.dineout_offers.push(restaurant.dineout_offer);
+//         offers.eazydiner_offers.push(restaurant.swiggy_offer);
+//         res.status(200).json(offers);
+//     } catch (error) {
+//         res.status(404).json({message: error.message});
+//     }
+// }
 
 export const createRestaurant = async (req, res) => {
     const restaurant = req.body
@@ -80,6 +80,19 @@ export const createRestaurant = async (req, res) => {
     }
 }
 
+export const createMenu = async (req, res) => {
+    const menu = req.body
+    const newMenu = new menuModel({
+    ...menu,
+    createdAt: new Date().toISOString(),
+    })
+    try {
+        await newMenu.save();
+        res.status(201).json(newMenu);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
 export const deleteRestaurant = async (req, res) => {
     const { id } = req.params;
   

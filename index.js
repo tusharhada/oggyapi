@@ -7,9 +7,12 @@ import mobileRoutes from "./routes/mobileRoute.js";
 
 const app = express();
 
-app.use(express.json({ extended: true }));
-app.use(express.urlencoded({extended: true }));
+//app.use(express.json({ extended: true }));
+//app.use(express.urlencoded({extended: true }));
 app.use(cors());
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
+
 dotenv.config();
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
