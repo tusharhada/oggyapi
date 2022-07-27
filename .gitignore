@@ -1,6 +1,6 @@
 /node_modules/
-/tempData/
-/utils/
-req1.rest
-req.rest
-req2.rest
+./tempData/
+./utils/
+./req1.rest
+./req.rest
+./req2.rest
