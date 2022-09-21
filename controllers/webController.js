@@ -127,7 +127,7 @@ export const getRestaurantsList = async (req, res) => {
       
     if(cuisines != null) {filter["cuisines.cuisine_id"] = {$in: cuisines}}
 
-        const LIMIT = 10;
+        const LIMIT = 12;
         if(!page) {page = 1}
         const startIndex = (Number(page) - 1) * LIMIT; // get the starting index of every page
 
@@ -226,7 +226,7 @@ export const searchLocation = async (req, res) => {
         },
       },
       //{ $sort: { res_count: -1 } },
-    ]);
+    ]).limit(12);
 
     const cities = await restaurantModel.aggregate([
       {
@@ -253,7 +253,7 @@ export const searchLocation = async (req, res) => {
           loc_type: "$_id.loc_type",
         },
       },
-    ]);
+    ]).limit(12);
 
     const locations = [...localities, ...cities];
     //console.log(localities, cities)
@@ -279,11 +279,13 @@ export const searchRestaurantsByLocation = async (req, res) => {
       return;
     }
 
+    const search = "^" + q
+
     let restaurants;
     if (type == "City") {
       restaurants = await restaurantModel
         .find({
-          name: { $regex: q, $options: "i" },
+          name: { $regex: search, $options: "i" },
           "location.city_id": location,
         })
         .select({
@@ -293,11 +295,11 @@ export const searchRestaurantsByLocation = async (req, res) => {
           "location.city": 1,
           "images.indexImage": 1,
           _id: 0,
-        });
+        }).limit(12);
     } else if (type == "Locality") {
       restaurants = await restaurantModel
         .find({
-          name: { $regex: q, $options: "i" },
+          name: { $regex: search, $options: "i" },
           "location.locality_id": location,
         })
         .select({
@@ -307,7 +309,7 @@ export const searchRestaurantsByLocation = async (req, res) => {
           "location.city": 1,
           "images.indexImage": 1,
           _id: 0,
-        });
+        }).limit(12);
     } else {
       res.status(404).json({ error: "Location Type is Invalid" });
       return;
