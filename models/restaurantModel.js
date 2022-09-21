@@ -104,7 +104,7 @@ const restaurantSchema = new mongoose.Schema({
             type: String,
             default: null
         },
-        longtitude: {
+        longitude: {
             type: String,
             default: null
         }
