@@ -75,6 +75,7 @@ export const getRestaurantsList = async (req, res) => {
 
   const location_id = req.query.loc;
   const type = req.query.type;
+  const q = req.query.q;
 
   try {
     if (!location_id || !type) {
@@ -97,8 +98,10 @@ export const getRestaurantsList = async (req, res) => {
     else if (req.query.SORT_BY && sortBy == "alphabetical") {sortObj = {"name": 1}}
     else {sortObj = {"id": 1}}
 
+    const search = "^" + q;
     //Filters
     var filter
+    //filter =  { name : { $regex: search, $options: "i" }}
     if (type == "City") {
       filter = {"location.city_id": location_id}
     } else if (type == "Locality") {
@@ -131,8 +134,8 @@ export const getRestaurantsList = async (req, res) => {
         if(!page) {page = 1}
         const startIndex = (Number(page) - 1) * LIMIT; // get the starting index of every page
 
-        const total = await restaurantModel.countDocuments(filter)
-        const restaurants = await restaurantModel.find(filter).sort(sortObj).limit(LIMIT).skip(startIndex)
+        const total = await restaurantModel.countDocuments({name : { $regex: search, $options: "i" }, filter})
+        const restaurants = await restaurantModel.find({name : { $regex: search, $options: "i" },filter}).sort(sortObj).limit(LIMIT).skip(startIndex)
             
         res.
         status(200).
