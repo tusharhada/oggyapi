@@ -99,6 +99,7 @@ export const getRestaurantsByCity = async (req, res) => {
     });
     const restaurants = await restaurantModel
       .find({ "location.city_id": city_id })
+      .select({_id: 0, __v: 0})
       .sort({ id: 1 })
       .limit(LIMIT)
       .skip(startIndex);
@@ -118,7 +119,7 @@ export const getRestaurantById = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const restaurant = await restaurantModel.find({ id: id });
+    const restaurant = await restaurantModel.find({ id: id }).select({_id: 0, __v: 0});
     res.status(200).json(restaurant);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -131,7 +132,7 @@ export const getRestaurantOffers = async (req, res) => {
   try {
     const restaurant = await restaurantModel
       .find({ id: id })
-      .select({ offer_details: 1 });
+      .select({ offer_details: 1, _id: 0, id: 1});
     res.status(200).json(restaurant);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -144,7 +145,7 @@ export const getRestaurantMenu = async (req, res) => {
   try {
     const restaurant = await restaurantModel
       .find({ id: id })
-      .select({ menu: 1 });
+      .select({ menu: 1, _id: 0, id: 1 });
     res.status(200).json(restaurant);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -230,6 +231,7 @@ export const getRestaurantList = async (req, res) => {
     const total = await restaurantModel.countDocuments(filter);
     const restaurants = await restaurantModel
       .find(filter)
+      .select({_id: 0, __v: 0})
       .sort(sortObj)
       .limit(LIMIT)
       .skip(startIndex);
