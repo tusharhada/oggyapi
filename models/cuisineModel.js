@@ -11,6 +11,13 @@ const cuisineSchema = new mongoose.Schema({
         required: "Cuisine name can't be empty",
         trim: true
     },
+    cuisine_image_url: {
+        type: String,
+        trim: true
+    },
+    res_count: {
+        type: Number
+    },
     mapped_cuisines: [{
         type: String,
         trim: true

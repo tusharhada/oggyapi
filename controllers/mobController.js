@@ -1,5 +1,6 @@
 import express from "express";
 import restaurantModel from "../models/restaurantModel.js";
+import cuisineModel from "../models/cuisineModel.js";
 //import menuModel from "../models/menuModel.js";
 
 const router = express.Router();
@@ -49,7 +50,7 @@ export const getCuisinesByCity = async (req, res) => {
   const city_id = parseInt(city);
 
   try {
-    const cuisines = await restaurantModel.aggregate([
+    const cuisine = await restaurantModel.aggregate([
       { $match: { "location.city_id": city_id } },
       { $unwind: "$cuisines" },
       //{unwind: "$cuisines.cuisine_id" },
@@ -62,16 +63,37 @@ export const getCuisinesByCity = async (req, res) => {
           res_count: { $sum: 1 },
         },
       },
+      {
+        $lookup: {
+          from: "cuisineModel",
+          localField: "cuisine_id",
+          foreignField: "cuisine_id",
+          as: "cuisines",
+        },
+      },
       { $sort: { res_count: -1 } },
       {
         $project: {
           cuisine_id: "$_id.cuisine_id",
           cuisine_name: "$_id.cuisine_name",
           res_count: "$res_count",
+          cuisine: "$cuisines",
           _id: 0,
         },
       },
     ]);
+
+    const cuisines = await cuisineModel
+      .find()
+      .select({
+        _id: 0,
+        cuisine_id: 1,
+        cuisine_name: 1,
+        cuisine_image_url: 1,
+        res_count: 1,
+      })
+      .sort({ res_count: -1 });
+
     res.status(200).json({
       cuisines: cuisines,
       totalCuisines: cuisines.length,
@@ -99,7 +121,7 @@ export const getRestaurantsByCity = async (req, res) => {
     });
     const restaurants = await restaurantModel
       .find({ "location.city_id": city_id })
-      .select({_id: 0, __v: 0})
+      .select({ _id: 0, __v: 0 })
       .sort({ id: 1 })
       .limit(LIMIT)
       .skip(startIndex);
@@ -119,7 +141,9 @@ export const getRestaurantById = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const restaurant = await restaurantModel.find({ id: id }).select({_id: 0, __v: 0});
+    const restaurant = await restaurantModel
+      .find({ id: id })
+      .select({ _id: 0, __v: 0 });
     res.status(200).json(restaurant);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -132,7 +156,7 @@ export const getRestaurantOffers = async (req, res) => {
   try {
     const restaurant = await restaurantModel
       .find({ id: id })
-      .select({ offer_details: 1, _id: 0, id: 1});
+      .select({ offer_details: 1, _id: 0, id: 1 });
     res.status(200).json(restaurant);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -231,7 +255,7 @@ export const getRestaurantList = async (req, res) => {
     const total = await restaurantModel.countDocuments(filter);
     const restaurants = await restaurantModel
       .find(filter)
-      .select({_id: 0, __v: 0})
+      .select({ _id: 0, __v: 0 })
       .sort(sortObj)
       .limit(LIMIT)
       .skip(startIndex);
