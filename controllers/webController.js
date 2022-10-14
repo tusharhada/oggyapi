@@ -117,7 +117,7 @@ export const getRestaurantsList = async (req, res) => {
   } else if (req.query.SORT_BY && sortBy == "alphabetical") {
     sortObj = { name: 1 };
   } else {
-    sortObj = { id: 1 };
+    sortObj = { "delivery_rating.z_rating.rating": -1 };
   }
 
   const search = "^" + q;
@@ -331,6 +331,7 @@ export const searchRestaurantsByLocation = async (req, res) => {
     }
 
     const search = "^" + q;
+    var sortObj = { "delivery_rating.z_rating.rating": -1 };
 
     let restaurants;
     if (type == "City") {
@@ -347,6 +348,7 @@ export const searchRestaurantsByLocation = async (req, res) => {
           "images.indexImage": 1,
           _id: 0,
         })
+        .sort(sortObj)
         .limit(12);
     } else if (type == "Locality") {
       restaurants = await restaurantModel
@@ -362,6 +364,7 @@ export const searchRestaurantsByLocation = async (req, res) => {
           "images.indexImage": 1,
           _id: 0,
         })
+        .sort(sortObj)
         .limit(12);
     } else {
       res.status(404).json({ error: "Location Type is Invalid" });
