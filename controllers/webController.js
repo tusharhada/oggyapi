@@ -236,10 +236,10 @@ export const getRestaurantMenu = async (req, res) => {
 export const searchLocation = async (req, res) => {
   try {
     const location = req.query.loc;
-    if (!location) {
-      res.status(404).json({ error: "Search String is missing" });
-      return;
-    }
+    // if (!location) {
+    //   res.status(404).json({ error: "Search String is missing" });
+    //   return;
+    // }
 
     const location_search = "^" + location;
 
@@ -273,7 +273,7 @@ export const searchLocation = async (req, res) => {
         },
         //{ $sort: { res_count: -1 } },
       ])
-      .limit(12);
+      // .limit(12);
 
     const cities = await restaurantModel
       .aggregate([
@@ -304,7 +304,7 @@ export const searchLocation = async (req, res) => {
           },
         },
       ])
-      .limit(12);
+      // .limit(12);
 
     const locations = [...localities, ...cities];
     //console.log(localities, cities)
