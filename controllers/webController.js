@@ -260,8 +260,10 @@ export const searchLocation = async (req, res) => {
               loc_type: "$location.type",
               //city_id: "$location.city_id",
             },
+          res_count: { $sum: 1 },
           },
         },
+        { $sort: { res_count: -1 } },
         {
           $project: {
             _id: 0,
@@ -269,9 +271,9 @@ export const searchLocation = async (req, res) => {
             loc_name: "$_id.loc_name",
             loc_city: "$_id.loc_city",
             loc_type: "$_id.loc_type",
+            // res_count: "$res_count",
           },
         },
-        //{ $sort: { res_count: -1 } },
       ])
       // .limit(12);
 
@@ -292,8 +294,10 @@ export const searchLocation = async (req, res) => {
               loc_type: "$location.type",
               //city_id: "$location.city_id",
             },
+          res_count: { $sum: 1 },
           },
         },
+        { $sort: { res_count: -1 } },
         {
           $project: {
             _id: 0,
@@ -301,9 +305,11 @@ export const searchLocation = async (req, res) => {
             loc_name: "$_id.loc_name",
             loc_city: "$_id.loc_city",
             loc_type: "$_id.loc_type",
+            // res_count: "$res_count",
           },
         },
       ])
+      
       // .limit(12);
 
     const locations = [...localities, ...cities];
