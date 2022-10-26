@@ -1,16 +1,9 @@
-POST http://localhost:8081/mapi/jaipur/locality  HTTP/1.1
+
+
+
+POST https://sms.smsmenow.in/generateOtp.jsp?userid=michael&key=08c0161e7eXX&mobileno=+919351299910&timetoalive=60 HTTP/1.1
 content-type: application/json
 
-
 {
-        "locality_code": 2,
-        "locality_name": "cscheme",
-        "z_locality_name": ["C-Scheme", "Panch Batti", "C Scheme"],
-        "s_locality_name": ["C-Scheme", "MI Road"],
-        "d_locality_name": ["C-Scheme", "Mirza Ismail Road"],
-        "e_locality_name": ["C Scheme"],
-        "city_id": 1,
-        "city_name": "Jaipur",
-        "country_id": 1,
-        "country_name": "India"
 }
+
