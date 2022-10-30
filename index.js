@@ -17,7 +17,7 @@ dotenv.config();
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8081;
 
 mongoose.connect(CONNECTION_URL, {
   useUnifiedTopology: true,
