@@ -180,6 +180,7 @@ export const getRestaurantList = async (req, res) => {
   const locality_id = req.query.loc;
   if (!locality_id) {
     res.json({ err: "Locality is missing" });
+    return;
   }
 
   var page;
