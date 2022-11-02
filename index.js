@@ -6,6 +6,7 @@ import cors from "cors";
 import mobileRoutes from "./routes/mobileRoute.js";
 import utilRoutes from "./routes/utilRoute.js";
 import webRoutes from "./routes/webRoute.js";
+import authRoutes from "./routes/authRoute.js";
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.listen(PORT, () => {
 app.use("/mapi", mobileRoutes);
 app.use("/util", utilRoutes);
 app.use("/wapi", webRoutes);
+app.use("/auth", authRoutes);
 
 app.get("/", (_, res) => {
   res.send("Hello from the profile backend!");
