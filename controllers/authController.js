@@ -1,19 +1,21 @@
 import express from "express";
 const router = express.Router();
 import firebaseAdmin from 'firebase-admin';
-import { v4 as uuidv4 } from 'uuid';
+
+firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert('./cert.json')
+    // databaseURL: 'https://<my_project>.firebaseio.com'
+  });
 
 export const getToken = async(req, res) =>{
 
     const mob = req.body.mobile
+    console.log(req.body);
     console.log(mob.toString().length);
     if (mob.toString().length == 10) {
-    firebaseAdmin.initializeApp({
-        credential: firebaseAdmin.credential.cert('./cert.json')
-        // databaseURL: 'https://<my_project>.firebaseio.com'
-      });
+   
 
-      firebaseAdmin.auth().createCustomToken(uuidv4()).then(function(token) {
+      firebaseAdmin.auth().createCustomToken(mob.toString()).then(function(token) {
         res.json({token: token});
       }).
       catch(function(error) {
