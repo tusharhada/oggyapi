@@ -1,6 +1,8 @@
-/node_modules/
+/node_modules
 /data_utils
 /utils/
 req1.rest
 req.rest
 req2.rest
+cert.json
+.env
